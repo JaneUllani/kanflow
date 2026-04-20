@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KanFlow Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===========================
+       HEADER
+  ============================ -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <h1>KanFlow</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===========================
+       BOARD
+       Contains all columns
+  ============================ -->
+  <main class="board" id="board">
+
+    <!-- COLUMN: To Do -->
+    <section class="column" data-column="todo">
+      <div class="column-header">
+        <span class="column-dot dot-todo"></span>
+        <h2 class="column-title">To Do</h2>
+        <span class="column-count">3</span>
+      </div>
+      <div class="card-list" id="col-todo">
+
+        <article class="card">
+          <p class="card-title">Research event-driven patterns</p>
+          <div class="card-footer">
+            <span class="card-tag tag-blue">Research</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="card-title">Set up project folder structure</p>
+          <div class="card-footer">
+            <span class="card-tag tag-green">Setup</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="card-title">Write HTML skeleton</p>
+          <div class="card-footer">
+            <span class="card-tag tag-yellow">HTML</span>
+          </div>
+        </article>
+        
+        <!-- 🆕 NEW CARDS -->
+      <article class="card">
+        <p class="card-title">Collect UI inspiration for Kanban design</p>
+      </article>
+
+      <article class="card">
+        <p class="card-title">Plan database schema for tasks</p>
+      </article>
+
+      <article class="card">
+        <p class="card-title">Prepare API endpoints structure</p>
+      </article>
+
+
+      </div>
+    </section>
+
+    <!-- COLUMN: In Progress -->
+    <section class="column" data-column="inprogress">
+      <div class="column-header">
+        <span class="column-dot dot-inprogress"></span>
+        <h2 class="column-title">In Progress</h2>
+        <span class="column-count">2</span>
+      </div>
+      <div class="card-list" id="col-inprogress">
+
+        <article class="card">
+          <p class="card-title">Style the board layout with CSS</p>
+          <div class="card-footer">
+            <span class="card-tag tag-yellow">CSS</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="card-title">Link JS files to index.html</p>
+          <div class="card-footer">
+            <span class="card-tag tag-blue">JS</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+      <!-- ================= REVIEW (NEW COLUMN) ================= -->
+  <section class="column" data-column="review">
+    <div class="column-header">
+      <span class="column-dot dot-review"></span>
+      <h2 class="column-title">Review</h2>
+      <span class="column-count">1</span>
+    </div>
+
+    <div class="card-list">
+      <article class="card">
+        <p class="card-title">Check UI responsiveness across devices</p>
+      </article>
+    </div>
+  </section>
+
+    <!-- COLUMN: Done -->
+    <section class="column" data-column="done">
+      <div class="column-header">
+        <span class="column-dot dot-done"></span>
+        <h2 class="column-title">Done</h2>
+        <span class="column-count">1</span>
+      </div>
+      <div class="card-list" id="col-done">
+
+        <article class="card card-done">
+          <p class="card-title">Plan Kanban board modules</p>
+          <div class="card-footer">
+            <span class="card-tag tag-green">Planning</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
