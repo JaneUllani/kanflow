@@ -8,10 +8,10 @@
 
 
 /**
- * ADD CARD FUNCTION
- * Reads input, creates new card, pushes into TODO column, re-renders board
+ * ADD CARD FUNCTION 
  */
 function addCard() {
+
   const input = document.getElementById('card-input');
   const title = input.value.trim();
 
@@ -25,31 +25,27 @@ function addCard() {
     done: false,
   };
 
-  const todoColumn = boardData.find(col => col.id === 'todo');
+  // ✔ Add card to correct data array
+  cards.push(newCard);
 
-  if (!todoColumn) {
-    console.error('TODO column not found');
-    return;
-  }
-
-  todoColumn.cards.push(newCard);
-
+  // Clear input field
   input.value = '';
+
+  // Re-render board
   renderBoard();
 }
 
 
 /**
- * DELETE CARD FUNCTION
- * Removes a card from a specific column by ID
+ * DELETE CARD FUNCTION 
  */
 function deleteCard(columnId, cardId) {
-  const column = boardData.find(col => col.id === columnId);
 
-  if (!column) {
-    console.error('Column not found:', columnId);
-    return;
-  }
-  column.cards = column.cards.filter(card => card.id !== cardId);
+  // Remove card from global cards array
+  cards = cards.filter(function(card) {
+    return card.id !== cardId;
+  });
+
+  // Re-render board after deletion
   renderBoard();
 }

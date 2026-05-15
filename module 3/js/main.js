@@ -4,7 +4,10 @@
 
 console.log("KanFlow is running - Module 2!");
 
-// Render the board when the page loads
+
+// =============================================
+// RENDER BOARD ON LOAD
+// =============================================
 renderBoard();
 
 console.log("Board rendered from data array.");
@@ -13,37 +16,45 @@ console.log("Cards:", cards.length);
 
 
 // =============================================
-// CLICK EVENT (ADD CARD BUTTON)
+// SAFE DOM ELEMENT CHECKS
 // =============================================
 
-const addBtn = document.getElementById('add-card-btn');
+// Get button + input safely AFTER DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
 
-addBtn.addEventListener('click', addCard);
+  const addBtn = document.getElementById('add-card-btn');
+  const input = document.getElementById('card-input');
 
+  // SAFETY CHECK: Button exists?
+  if (addBtn) {
+    addBtn.addEventListener('click', addCard);
+  } else {
+    console.error("Add Card button not found!");
+  }
 
-// =============================================
-// ENTER KEY EVENT (INPUT FIELD)
-// =============================================
-
-const input = document.getElementById('card-input');
-
-input.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    addCard();
+  // ENTER KEY EVENT
+  if (input) {
+    input.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        addCard();
+      }
+    });
+  } else {
+    console.error("Card input not found!");
   }
 });
 
 
 // =============================================
-// TRY THESE IN THE CONSOLE (F12)
+// CONSOLE TESTS
 // =============================================
 //
-// 1. How many cards are in the To Do column?
+// 1. Count To Do cards:
 //    cards.filter(c => c.column === 'todo').length
 //
-// 2. Add a new card manually:
+// 2. Add test card:
 //    cards.push({
-//      id: 7,
+//      id: Date.now(),
 //      title: "My new card",
 //      column: "todo",
 //      tag: "JS",
@@ -51,6 +62,6 @@ input.addEventListener('keydown', function (event) {
 //    });
 //    renderBoard();
 //
-// 3. Move a card to another column:
+// 3. Move card:
 //    cards[0].column = "inprogress";
 //    renderBoard();
