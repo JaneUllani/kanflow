@@ -17,7 +17,8 @@ const columns = [
   { id: "inprogress", title: "In Progress", dot: "dot-inprogress" },
   { id: "review",     title: "Review",      dot: "dot-review"     },
   { id: "done",       title: "Done",        dot: "dot-done"       },
-  { id: "blocked",    title: "Blocked",     dot: "dot-blocked"    }
+  { id: "blocked",    title: "Blocked",     dot: "dot-blocked"    },
+  { id: "testing",    title: "TESTING",     dot: "dot-testing"    }
 ];
 
 
@@ -35,5 +36,6 @@ const cards = [
   { id: 4, title: "Style the board layout with CSS", column: "review",     tag: "CSS",      done: false },
   { id: 5, title: "Link JS files to index.html",     column: "inprogress", tag: "JS",       done: false },
   { id: 6, title: "Plan Kanban board modules",       column: "done",       tag: "Planning", done: true  },
-  { id: 7, title: "Fix drag-and-drop bugs",          column: "blocked",    tag: "Debug",    done: false }
+  { id: 7, title: "Fix drag-and-drop bugs",          column: "blocked",    tag: "Debug",    done: false },
+  { id: 8, title: "Design footer section",          column: "todo",    tag: "Design",    done: false }
 ];
